@@ -3,5 +3,6 @@
         "prettier-plugin-tailwindcss"
     ],
     "tailwindStylesheet": "./src/style.css",
-    "tabWidth": 4
+    "tabWidth": 4,
+    "printWidth": 120
 }

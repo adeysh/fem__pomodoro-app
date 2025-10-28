@@ -1,1 +1,44 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Roboto+Slab:wght@100..900&family=Space+Mono:wght@400;700&display=swap");
 @import "tailwindcss";
+
+@theme {
+    /* fonts */
+    --font-kumbh: "Kumbh Sans", sans-serif;
+    --font-roboto: "Roboto Slab", serif;
+    --font-space-mono: "Space Mono", monospace;
+
+    --font-body: var(--font-kumbh);
+
+    /* colors */
+    --clr-white: hsl(0 0% 100%);
+    --clr-light-gray: hsl(229 52% 96%);
+    --clr-light-blue: hsl(227 100% 92%);
+    --clr-deep-navy: hsl(235 35% 18%);
+    --clr-midnight-blue: hsl(234 39% 14%);
+    --clr-coral-pink: hsl(0 91% 71%);
+    --clr-cyan: hsl(182 91% 71%);
+    --clr-purple: hsl(284 89% 74%);
+
+    --selected-color: var(--clr-coral-pink);
+
+    --stroke-offset-null: 0;
+    /* --animation-draw: draw 50s linear forwards; */
+}
+
+@layer utilities {
+    .shadow-combined {
+        --tw-shadow: -50px -50px 100px 0 hsl(234, 40%, 25%), 50px 50px 100px 0 hsl(235, 45%, 13%);
+        --tw-shadow-colored: -50px -50px 100px 0 var(--tw-shadow-color), 50px 50px 100px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+}
+
+/* @keyframes draw {
+    from {
+        stroke-dashoffset: var(--stroke-offset-null);
+    }
+    to {
+        stroke-dashoffset: 99;
+    }
+} */
