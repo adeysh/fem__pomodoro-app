@@ -23,7 +23,14 @@
     --selected-color: var(--clr-coral-pink);
 
     --stroke-offset-null: 0;
-    /* --animation-draw: draw 50s linear forwards; */
+}
+
+@layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 }
 
 @layer utilities {
@@ -33,12 +40,3 @@
         box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     }
 }
-
-/* @keyframes draw {
-    from {
-        stroke-dashoffset: var(--stroke-offset-null);
-    }
-    to {
-        stroke-dashoffset: 99;
-    }
-} */
