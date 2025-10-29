@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub repo](https://github.com/adeysh/fem__pomodoro-app)
-- Live Site URL: [Vercel Live preview](https://fm-galleria-slideshow-using-astro-sass-tailwind.vercel.app/)
+- Live Site URL: [Vercel Live preview](https://fem-pomodoro-app.vercel.app/)
 
 ## My process
 
