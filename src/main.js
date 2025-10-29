@@ -22,7 +22,7 @@ const timeValues = {
 const timerStates = new Map();
 let tabFocus = 0;
 let sessionCount = parseInt(localStorage.getItem("sessionCount")) || 0;
-let currentMode = "pomodoro"; // "pomodoro", "shortBreak", or "longBreak"
+let currentMode = "pomodoro";
 
 const FONT_MAP = {
     "kumbh-sans": "--font-kumbh",
@@ -252,7 +252,6 @@ function saveStats() {
 }
 
 function handleSessionComplete() {
-    // Update stats
     handleSessionCompleteStats(currentMode);
 
     if (currentMode === "pomodoro") {
@@ -260,14 +259,11 @@ function handleSessionComplete() {
         localStorage.setItem("sessionCount", sessionCount);
 
         if (sessionCount % 4 === 0) {
-            // Every 4 pomodoros → long break
             switchMode("longBreak");
         } else {
-            // Otherwise → short break
             switchMode("shortBreak");
         }
     } else {
-        // After any break → back to pomodoro
         switchMode("pomodoro");
     }
 }
@@ -288,24 +284,19 @@ function handleSessionCompleteStats(type) {
 function switchMode(type) {
     currentMode = type;
 
-    // Hide all panels
     document.querySelectorAll("[role='tabpanel']").forEach((panel) => {
         panel.classList.add("hidden");
     });
 
-    // Show the active one
     const activePanel = document.querySelector(`[data-type='${type}']`);
     if (activePanel) activePanel.classList.remove("hidden");
 
-    // Reset timer duration for the new mode
     setTimerDuration(activePanel, timeValues[type]);
 
-    // Update tab button UI (if you have them)
     document.querySelectorAll("[role='tab']").forEach((tab) => {
         tab.setAttribute("aria-selected", tab.dataset.type === type ? "true" : "false");
     });
 
-    // Optionally, visually update color scheme for each mode
     elements.body.style.setProperty("--selected-color", `var(${COLOR_MAP[type] || COLOR_MAP.default})`);
 }
 
